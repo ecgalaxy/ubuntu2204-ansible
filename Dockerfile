@@ -3,10 +3,6 @@ LABEL maintainer="DIGIT-ECGALAXY@ec.europa.eu"
 
 ENV ANSIBLE_USER=ansible SUDO_GROUP=sudo DEPLOY_GROUP=deployer
 
-RUN apt update && \
-  apt upgrade -y && \
-  rm -rf /var/lib/apt/lists/*
-
 RUN set -xe && \
   groupadd -r ${ANSIBLE_USER} && \
   groupadd -r ${DEPLOY_GROUP} && \
